@@ -1,7 +1,6 @@
 'use client';
 
 import { useInView } from '@/hooks/useInView';
-import { useScramble } from '@/hooks/useScramble';
 
 const kw = (text: string) => (
   <span style={{ color: '#38BDF8' }}>{text}</span>
@@ -67,7 +66,6 @@ const lines: React.ReactNode[] = [
 
 export default function About() {
   const { ref, isInView } = useInView();
-  const scrambledHeading = useScramble('o mnie', isInView, 30);
 
   return (
     <section
@@ -84,8 +82,18 @@ export default function About() {
     >
       <div className="max-w-5xl mx-auto px-6">
         <div style={{ borderBottom: '1px solid #1A1A1A', paddingBottom: '16px', marginBottom: '4rem' }}>
-          <p style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#F5F5F5' }}>
-            {scrambledHeading} <span style={{ color: '#38BDF8' }}>/&gt;</span>
+          <p
+            style={{
+              fontSize: '13px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: '#F5F5F5',
+              opacity: isInView ? 1 : 0,
+              transform: isInView ? 'translateX(0)' : 'translateX(-24px)',
+              transition: 'opacity 600ms ease, transform 600ms ease',
+            }}
+          >
+            o mnie <span style={{ color: '#38BDF8' }}>/&gt;</span>
           </p>
         </div>
 

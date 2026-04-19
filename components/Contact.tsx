@@ -103,7 +103,16 @@ export default function Contact() {
           {/* Left column */}
           <div className="w-full md:w-3/5">
             <div style={{ lineHeight: 1 }}>
-              <p style={{ color: '#F5F5F5', fontWeight: 700, fontSize: 'clamp(28px, 6vw, 64px)' }}>
+              <p
+                style={{
+                  color: '#F5F5F5',
+                  fontWeight: 700,
+                  fontSize: 'clamp(28px, 6vw, 64px)',
+                  opacity: isInView ? 1 : 0,
+                  transform: isInView ? 'translateX(0)' : 'translateX(-24px)',
+                  transition: 'opacity 600ms ease, transform 600ms ease',
+                }}
+              >
                 Masz projekt?
               </p>
               <p style={{ color: '#38BDF8', fontWeight: 700, fontSize: 'clamp(28px, 6vw, 64px)' }}>

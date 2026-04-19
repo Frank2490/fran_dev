@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from '@/hooks/useInView';
-import { useScramble } from '@/hooks/useScramble';
 
 type Project = {
   number: string;
@@ -170,7 +169,11 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
     return () => observer.disconnect();
   }, []);
 
-  const scrambledTitle = useScramble(project.title, rowInView, 30);
+  const titleStyle = {
+    opacity: rowInView ? 1 : 0,
+    transform: rowInView ? 'translateX(0)' : 'translateX(-24px)',
+    transition: 'opacity 600ms ease, transform 600ms ease',
+  };
 
   return (
     <div
@@ -204,8 +207,8 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
             {project.number}
           </span>
           <div>
-            <p style={{ color: '#F5F5F5', fontSize: '22px', fontWeight: 600, marginBottom: '8px' }}>
-              {scrambledTitle}
+            <p style={{ color: '#F5F5F5', fontSize: '22px', fontWeight: 600, marginBottom: '8px', ...titleStyle }}>
+              {project.title}
             </p>
             <p style={{ color: '#555555', fontSize: '14px', lineHeight: 1.7, maxWidth: '480px', marginBottom: '16px' }}>
               {project.description}
@@ -224,8 +227,8 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
 
       {/* Mobile layout */}
       <div className="flex flex-col md:hidden gap-3">
-        <p style={{ color: '#F5F5F5', fontSize: 'clamp(24px, 7vw, 32px)', fontWeight: 600, lineHeight: 1.1 }}>
-          {scrambledTitle}
+        <p style={{ color: '#F5F5F5', fontSize: 'clamp(24px, 7vw, 32px)', fontWeight: 600, lineHeight: 1.1, ...titleStyle }}>
+          {project.title}
         </p>
         <p style={{ color: '#555555', fontSize: '14px', lineHeight: 1.7 }}>
           {project.description}
@@ -331,7 +334,17 @@ export default function Projects() {
       >
         <div className="max-w-5xl mx-auto px-6">
           <div style={{ borderBottom: '1px solid #1A1A1A', paddingBottom: '16px', marginBottom: '4rem' }}>
-            <p style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#F5F5F5' }}>
+            <p
+              style={{
+                fontSize: '13px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: '#F5F5F5',
+                opacity: isInView ? 1 : 0,
+                transform: isInView ? 'translateX(0)' : 'translateX(-24px)',
+                transition: 'opacity 600ms ease, transform 600ms ease',
+              }}
+            >
               projekty <span style={{ color: '#38BDF8' }}>/&gt;</span>
             </p>
           </div>
