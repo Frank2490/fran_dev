@@ -3,13 +3,13 @@
 import { useInView } from '@/hooks/useInView';
 
 const kw = (text: string) => (
-  <span style={{ color: '#58A6FF' }}>{text}</span>
+  <span style={{ color: '#7C3AED' }}>{text}</span>
 );
 const name = (text: string) => (
-  <span style={{ color: '#58A6FF' }}>{text}</span>
+  <span style={{ color: '#7C3AED' }}>{text}</span>
 );
 const str = (text: string) => (
-  <span style={{ color: '#A3E635' }}>{text}</span>
+  <span style={{ color: '#e3a64b' }}>{text}</span>
 );
 const comment = (text: string) => (
   <span style={{ color: '#8B949E' }}>{text}</span>
@@ -87,13 +87,13 @@ export default function About() {
               fontSize: '13px',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#58A6FF',
+              color: '#7C3AED',
               opacity: isInView ? 1 : 0,
               transform: isInView ? 'translateX(0)' : 'translateX(-24px)',
               transition: 'opacity 600ms ease, transform 600ms ease',
             }}
           >
-            o mnie <span style={{ color: '#58A6FF' }}>/&gt;</span>
+            o mnie <span style={{ color: '#7C3AED' }}>/&gt;</span>
           </p>
         </div>
 

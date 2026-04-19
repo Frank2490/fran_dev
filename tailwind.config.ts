@@ -18,12 +18,12 @@ const config: Config = {
           DEFAULT: '#30363D',
         },
         accent: {
-          DEFAULT: '#58A6FF',
-          dark: '#1F6FEB',
-          light: '#7C3AED',
+          DEFAULT: '#7C3AED',
+          dark: '#6D28D9',
+          light: '#A78BFA',
         },
         text: {
-          DEFAULT: '#E6EDF3',
+          DEFAULT: '#FFFFFF',
           muted: '#8B949E',
         },
       },

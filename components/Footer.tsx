@@ -18,9 +18,9 @@ function FooterNavLink({ href, label }: { href: string; label: string }) {
       href={href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ color: hovered ? '#58A6FF' : '#8B949E', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
+      style={{ color: hovered ? '#7C3AED' : '#8B949E', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
     >
-      {label} <span style={{ color: '#58A6FF' }}>/&gt;</span>
+      {label} <span style={{ color: '#7C3AED' }}>/&gt;</span>
     </a>
   );
 }
@@ -28,7 +28,7 @@ function FooterNavLink({ href, label }: { href: string; label: string }) {
 function FooterLink({
   href,
   label,
-  hoverColor = '#58A6FF',
+  hoverColor = '#7C3AED',
   target,
 }: {
   href: string;
@@ -77,7 +77,7 @@ export default function Footer() {
                 height={28}
                 className="object-contain"
               />
-              <span style={{ color: '#58A6FF', fontSize: '14px', fontWeight: 500 }}>fran.dev</span>
+              <span style={{ color: '#7C3AED', fontSize: '14px', fontWeight: 500 }}>fran.dev</span>
             </div>
             <p style={{ color: '#8B949E', fontSize: '12px', marginTop: '12px' }}>
               © 2024 Franciszek Solewicz
@@ -95,7 +95,7 @@ export default function Footer() {
           <div className="flex gap-6">
             <FooterLink href="https://github.com/Frank2490" label="GitHub" target="_blank" />
             <FooterLink href="https://useme.com/pl/roles/contractor/franciszek-solewicz,576196/" label="Useme" target="_blank" />
-            <FooterLink href="mailto:franeksolewicz228@gmail.com" label="Email" hoverColor="#58A6FF" />
+            <FooterLink href="mailto:franeksolewicz228@gmail.com" label="Email" hoverColor="#7C3AED" />
           </div>
         </div>
 

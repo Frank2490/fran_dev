@@ -195,7 +195,7 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
         <div className="flex gap-8 items-start">
           <span
             style={{
-              color: hovered ? '#58A6FF' : '#161B22',
+              color: hovered ? '#7C3AED' : '#161B22',
               fontSize: '13px',
               fontWeight: 500,
               minWidth: '32px',
@@ -207,7 +207,7 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
             {project.number}
           </span>
           <div>
-            <p style={{ color: '#58A6FF', fontSize: '22px', fontWeight: 600, marginBottom: '8px', ...titleStyle }}>
+            <p style={{ color: '#F0F6FC', fontSize: '22px', fontWeight: 600, marginBottom: '8px', ...titleStyle }}>
               {project.title}
             </p>
             <p style={{ color: '#8B949E', fontSize: '14px', lineHeight: 1.7, maxWidth: '480px', marginBottom: '16px' }}>
@@ -227,7 +227,7 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
 
       {/* Mobile layout */}
       <div className="flex flex-col md:hidden gap-3">
-        <p style={{ color: '#58A6FF', fontSize: 'clamp(24px, 7vw, 32px)', fontWeight: 600, lineHeight: 1.1, ...titleStyle }}>
+        <p style={{ color: '#F0F6FC', fontSize: 'clamp(24px, 7vw, 32px)', fontWeight: 600, lineHeight: 1.1, ...titleStyle }}>
           {project.title}
         </p>
         <p style={{ color: '#8B949E', fontSize: '14px', lineHeight: 1.7 }}>
@@ -255,8 +255,8 @@ function Tag({ label }: { label: string }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        border: `1px solid ${hovered ? '#58A6FF' : '#161B22'}`,
-        color: hovered ? '#58A6FF' : '#8B949E',
+        border: `1px solid ${hovered ? '#7C3AED' : '#161B22'}`,
+        color: hovered ? '#7C3AED' : '#8B949E',
         fontSize: '12px',
         padding: '4px 12px',
         borderRadius: '9999px',
@@ -290,7 +290,7 @@ function ExternalLink({ href, label }: { href: string; label: string }) {
       rel="noopener noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ color: hovered ? '#58A6FF' : '#8B949E', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
+      style={{ color: hovered ? '#7C3AED' : '#8B949E', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
     >
       {label}
     </a>
@@ -339,13 +339,13 @@ export default function Projects() {
                 fontSize: '13px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#58A6FF',
+                color: '#7C3AED',
                 opacity: isInView ? 1 : 0,
                 transform: isInView ? 'translateX(0)' : 'translateX(-24px)',
                 transition: 'opacity 600ms ease, transform 600ms ease',
               }}
             >
-              projekty <span style={{ color: '#58A6FF' }}>/&gt;</span>
+              projekty <span style={{ color: '#7C3AED' }}>/&gt;</span>
             </p>
           </div>
 
@@ -360,7 +360,7 @@ export default function Projects() {
                   marginBottom: '2rem',
                 }}
               >
-                <span style={{ color: '#58A6FF' }}>— </span>
+                <span style={{ color: '#7C3AED' }}>— </span>
                 {category.name}
               </p>
               {category.projects.map((project) => (
@@ -397,17 +397,17 @@ export default function Projects() {
             {/* Header */}
             <div className="flex justify-between items-start" style={{ marginBottom: '24px' }}>
               <div>
-                <p style={{ color: '#58A6FF', fontSize: '12px', marginBottom: '4px' }}>
+                <p style={{ color: '#7C3AED', fontSize: '12px', marginBottom: '4px' }}>
                   {selectedProject.number}
                 </p>
-                <p style={{ color: '#58A6FF', fontSize: '24px', fontWeight: 700 }}>
+                <p style={{ color: '#7C3AED', fontSize: '24px', fontWeight: 700 }}>
                   {selectedProject.title}
                 </p>
               </div>
               <button
                 onClick={() => setSelectedProject(null)}
                 style={{ color: '#8B949E', fontSize: '20px', cursor: 'pointer', background: 'none', border: 'none', lineHeight: 1 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#58A6FF')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#7C3AED')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#8B949E')}
               >
                 ✕
@@ -466,8 +466,8 @@ function ModalTag({ label }: { label: string }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        border: `1px solid ${hovered ? '#58A6FF' : '#161B22'}`,
-        color: hovered ? '#58A6FF' : '#8B949E',
+        border: `1px solid ${hovered ? '#7C3AED' : '#161B22'}`,
+        color: hovered ? '#7C3AED' : '#8B949E',
         fontSize: '12px',
         padding: '4px 12px',
         borderRadius: '9999px',
@@ -492,7 +492,7 @@ function ModalLink({ href, label, primary }: { href: string; label: string; prim
       style={
         primary
           ? {
-              backgroundColor: hovered ? '#1F6FEB' : '#58A6FF',
+              backgroundColor: hovered ? '#6D28D9' : '#7C3AED',
               color: '#0D1117',
               fontWeight: 600,
               fontSize: '14px',
@@ -503,7 +503,7 @@ function ModalLink({ href, label, primary }: { href: string; label: string; prim
             }
           : {
               border: `1px solid ${hovered ? '#8B949E' : '#161B22'}`,
-              color: hovered ? '#58A6FF' : '#8B949E',
+              color: hovered ? '#7C3AED' : '#8B949E',
               fontSize: '14px',
               padding: '10px 24px',
               borderRadius: '9999px',

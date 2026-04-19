@@ -147,7 +147,7 @@ export default function Hero() {
         style={{
           width: '500px',
           height: '500px',
-          background: '#58A6FF',
+          background: '#7C3AED',
           opacity: 0.03,
           filter: 'blur(96px)',
           borderRadius: '50%',
@@ -170,14 +170,14 @@ export default function Hero() {
         <h1 style={{ lineHeight: 1 }}>
           <span
             className="block"
-            style={{ color: '#E6EDF3', fontWeight: 700, fontSize: 'clamp(48px, 10vw, 72px)', minHeight: '1.1em' }}
+            style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 'clamp(48px, 10vw, 72px)', minHeight: '1.1em' }}
           >
             {displayText}
           </span>
           <span
             className="block"
             style={{
-              color: '#58A6FF',
+              color: '#7C3AED',
               fontWeight: 700,
               fontSize: 'clamp(48px, 10vw, 72px)',
               ...fadeStyle(phase, 1, '0ms'),
@@ -197,7 +197,7 @@ export default function Hero() {
             ...fadeStyle(phase, 2, '0ms'),
           }}
         >
-          <p style={{ fontSize: 'clamp(16px, 4vw, 22px)', fontWeight: 400, color: '#E6EDF3' }}>
+          <p style={{ fontSize: 'clamp(16px, 4vw, 22px)', fontWeight: 400, color: '#FFFFFF' }}>
             <span
               style={{
                 color: '#8B949E',
@@ -212,7 +212,7 @@ export default function Hero() {
             <span
               style={{
                 display: 'inline-block',
-                color: '#58A6FF',
+                color: '#7C3AED',
                 opacity: roleVisible ? 1 : 0,
                 transform: roleVisible ? 'translateY(0)' : 'translateY(-8px)',
                 transition: 'opacity 400ms ease, transform 400ms ease',
@@ -232,7 +232,7 @@ export default function Hero() {
             href="#projekty"
             className="transition-all duration-200 hover:scale-105 text-center"
             style={{
-              backgroundColor: '#58A6FF',
+              backgroundColor: '#7C3AED',
               color: '#0D1117',
               fontWeight: 600,
               fontSize: '14px',
@@ -240,8 +240,8 @@ export default function Hero() {
               borderRadius: '9999px',
               cursor: 'pointer',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#1F6FEB')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#58A6FF')}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#6D28D9')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#7C3AED')}
           >
             zobacz projekty
           </a>
@@ -259,7 +259,7 @@ export default function Hero() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = '#8B949E';
-              e.currentTarget.style.color = '#E6EDF3';
+              e.currentTarget.style.color = '#FFFFFF';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = '#161B22';
@@ -280,7 +280,7 @@ export default function Hero() {
             const count = i === 0 ? count3 : count5;
             return (
               <div key={label} className="flex flex-col">
-                <span style={{ color: '#E6EDF3', fontSize: 'clamp(24px, 6vw, 36px)', fontWeight: 700, lineHeight: 1 }}>
+                <span style={{ color: '#FFFFFF', fontSize: 'clamp(24px, 6vw, 36px)', fontWeight: 700, lineHeight: 1 }}>
                   {count}+
                 </span>
                 <span style={{ color: '#8B949E', fontSize: '13px', marginTop: '4px' }}>

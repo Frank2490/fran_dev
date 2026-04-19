@@ -45,7 +45,7 @@ export default function Navbar() {
               height={32}
               className="object-contain"
             />
-            <span style={{ color: '#E6EDF3', fontSize: '15px', fontWeight: 500, whiteSpace: 'nowrap' }}>
+            <span style={{ color: '#FFFFFF', fontSize: '15px', fontWeight: 500, whiteSpace: 'nowrap' }}>
             fran.dev
             </span>
           </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
             {navLinks.map(({ href, label }) => (
               <a key={href} href={href} className="group transition-colors duration-200" style={{ fontSize: '14px', color: '#8B949E' }}>
                 <span className="group-hover:text-white transition-colors duration-200">{label}</span>
-                <span style={{ color: '#58A6FF' }}> /&gt;</span>
+                <span style={{ color: '#7C3AED' }}> /&gt;</span>
               </a>
             ))}
           </nav>
@@ -69,7 +69,7 @@ export default function Navbar() {
             >
               <span
                 className="animate-pulse rounded-full shrink-0"
-                style={{ width: '6px', height: '6px', backgroundColor: '#58A6FF', display: 'inline-block' }}
+                style={{ width: '6px', height: '6px', backgroundColor: '#7C3AED', display: 'inline-block' }}
               />
               <span className="group-hover:text-white transition-colors duration-200" style={{ color: '#8B949E' }}>
                 dostępny
@@ -82,7 +82,7 @@ export default function Navbar() {
               style={{ color: '#8B949E', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
               aria-label="Toggle menu"
               onClick={() => setMenuOpen((o) => !o)}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#E6EDF3')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#8B949E')}
             >
               {menuOpen ? (
@@ -122,14 +122,14 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             <span className="group-hover:text-white transition-colors duration-200">{label}</span>
-            <span style={{ color: '#58A6FF' }}> /&gt;</span>
+            <span style={{ color: '#7C3AED' }}> /&gt;</span>
           </a>
         ))}
 
         <div className="flex items-center gap-2 mt-4" style={{ fontSize: '13px' }}>
           <span
             className="animate-pulse rounded-full shrink-0"
-            style={{ width: '6px', height: '6px', backgroundColor: '#58A6FF', display: 'inline-block' }}
+            style={{ width: '6px', height: '6px', backgroundColor: '#7C3AED', display: 'inline-block' }}
           />
           <span style={{ color: '#8B949E' }}>dostępny</span>
         </div>
