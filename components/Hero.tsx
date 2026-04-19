@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useScramble } from '@/hooks/useScramble';
 
 function useCountUp(target: number, duration: number = 1500, start: boolean) {
   const [count, setCount] = useState(0)
@@ -52,14 +51,6 @@ export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
   const [roleVisible, setRoleVisible] = useState(true);
   const [isInView, setIsInView] = useState(false);
-  const [startScramble, setStartScramble] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setStartScramble(true), 1650);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  const scrambledText = useScramble('Projektuję i buduję —', startScramble, 25);
   const statsRef = useRef<HTMLDivElement>(null);
 
   const count3 = useCountUp(3, 1200, isInView);
@@ -88,7 +79,7 @@ export default function Hero() {
           clearInterval(interval);
           setPhase(1);
         }
-      }, 80);
+      }, 40);
       return () => clearInterval(interval);
     }, 300);
     return () => clearTimeout(timeout);
@@ -102,7 +93,7 @@ export default function Hero() {
         setCurrentRole((prev) => (prev + 1) % roles.length);
         setRoleVisible(true);
       }, 400);
-    }, 2000);
+    }, 1500);
     return () => clearInterval(interval);
   }, []);
 
@@ -110,7 +101,7 @@ export default function Hero() {
   useEffect(() => {
     if (phase === 0) return;
     const timers: ReturnType<typeof setTimeout>[] = [];
-    [400, 800, 1200].forEach((delay, i) => {
+    [300, 500, 700].forEach((delay, i) => {
       timers.push(setTimeout(() => setPhase(i + 2), delay));
     });
     return () => timers.forEach(clearTimeout);
@@ -207,8 +198,16 @@ export default function Hero() {
           }}
         >
           <p style={{ fontSize: 'clamp(16px, 4vw, 22px)', fontWeight: 400, color: '#F5F5F5' }}>
-            <span style={{ color: '#555555' }}>
-              {scrambledText}&nbsp;
+            <span
+              style={{
+                color: '#555555',
+                opacity: phase >= 2 ? 1 : 0,
+                transform: phase >= 2 ? 'translateX(0)' : 'translateX(-24px)',
+                transition: 'opacity 600ms ease, transform 600ms ease',
+                display: 'inline-block',
+              }}
+            >
+              Projektuję i buduję —&nbsp;
             </span>
             <span
               style={{
