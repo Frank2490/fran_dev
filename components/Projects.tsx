@@ -182,7 +182,7 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        borderBottom: '1px solid #1A1A1A',
+        borderBottom: '1px solid #30363D',
         paddingTop: '40px',
         paddingBottom: '40px',
         background: hovered ? 'rgba(255,255,255,0.02)' : 'transparent',
@@ -195,7 +195,7 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
         <div className="flex gap-8 items-start">
           <span
             style={{
-              color: hovered ? '#38BDF8' : '#1A1A1A',
+              color: hovered ? '#58A6FF' : '#161B22',
               fontSize: '13px',
               fontWeight: 500,
               minWidth: '32px',
@@ -207,10 +207,10 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
             {project.number}
           </span>
           <div>
-            <p style={{ color: '#F5F5F5', fontSize: '22px', fontWeight: 600, marginBottom: '8px', ...titleStyle }}>
+            <p style={{ color: '#58A6FF', fontSize: '22px', fontWeight: 600, marginBottom: '8px', ...titleStyle }}>
               {project.title}
             </p>
-            <p style={{ color: '#555555', fontSize: '14px', lineHeight: 1.7, maxWidth: '480px', marginBottom: '16px' }}>
+            <p style={{ color: '#8B949E', fontSize: '14px', lineHeight: 1.7, maxWidth: '480px', marginBottom: '16px' }}>
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -227,10 +227,10 @@ function ProjectRow({ project, onClick }: { project: Project; onClick: () => voi
 
       {/* Mobile layout */}
       <div className="flex flex-col md:hidden gap-3">
-        <p style={{ color: '#F5F5F5', fontSize: 'clamp(24px, 7vw, 32px)', fontWeight: 600, lineHeight: 1.1, ...titleStyle }}>
+        <p style={{ color: '#58A6FF', fontSize: 'clamp(24px, 7vw, 32px)', fontWeight: 600, lineHeight: 1.1, ...titleStyle }}>
           {project.title}
         </p>
-        <p style={{ color: '#555555', fontSize: '14px', lineHeight: 1.7 }}>
+        <p style={{ color: '#8B949E', fontSize: '14px', lineHeight: 1.7 }}>
           {project.description}
         </p>
         <div className="flex flex-col items-start gap-3">
@@ -255,8 +255,8 @@ function Tag({ label }: { label: string }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        border: `1px solid ${hovered ? '#38BDF8' : '#1A1A1A'}`,
-        color: hovered ? '#38BDF8' : '#555555',
+        border: `1px solid ${hovered ? '#58A6FF' : '#161B22'}`,
+        color: hovered ? '#58A6FF' : '#8B949E',
         fontSize: '12px',
         padding: '4px 12px',
         borderRadius: '9999px',
@@ -271,7 +271,7 @@ function Tag({ label }: { label: string }) {
 
 function Links({ project }: { project: Project }) {
   if (!project.link && !project.github) {
-    return <span style={{ color: '#1A1A1A', fontSize: '13px' }}>wkrótce</span>;
+    return <span style={{ color: '#161B22', fontSize: '13px' }}>wkrótce</span>;
   }
   return (
     <>
@@ -290,7 +290,7 @@ function ExternalLink({ href, label }: { href: string; label: string }) {
       rel="noopener noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ color: hovered ? '#F5F5F5' : '#555555', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
+      style={{ color: hovered ? '#58A6FF' : '#8B949E', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
     >
       {label}
     </a>
@@ -324,7 +324,7 @@ export default function Projects() {
         id="projekty"
         ref={ref as React.RefObject<HTMLElement>}
         style={{
-          backgroundColor: '#141414',
+          backgroundColor: '#0D1117',
           paddingTop: '8rem',
           paddingBottom: '8rem',
           opacity: isInView ? 1 : 0,
@@ -333,19 +333,19 @@ export default function Projects() {
         }}
       >
         <div className="max-w-5xl mx-auto px-6">
-          <div style={{ borderBottom: '1px solid #1A1A1A', paddingBottom: '16px', marginBottom: '4rem' }}>
+          <div style={{ borderBottom: '1px solid #30363D', paddingBottom: '16px', marginBottom: '4rem' }}>
             <p
               style={{
                 fontSize: '13px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#F5F5F5',
+                color: '#58A6FF',
                 opacity: isInView ? 1 : 0,
                 transform: isInView ? 'translateX(0)' : 'translateX(-24px)',
                 transition: 'opacity 600ms ease, transform 600ms ease',
               }}
             >
-              projekty <span style={{ color: '#38BDF8' }}>/&gt;</span>
+              projekty <span style={{ color: '#58A6FF' }}>/&gt;</span>
             </p>
           </div>
 
@@ -356,11 +356,11 @@ export default function Projects() {
                   fontSize: '12px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.2em',
-                  color: '#555555',
+                  color: '#8B949E',
                   marginBottom: '2rem',
                 }}
               >
-                <span style={{ color: '#38BDF8' }}>— </span>
+                <span style={{ color: '#58A6FF' }}>— </span>
                 {category.name}
               </p>
               {category.projects.map((project) => (
@@ -382,8 +382,8 @@ export default function Projects() {
             className="rounded-2xl overflow-y-auto"
             style={{
               position: 'relative',
-              backgroundColor: '#141414',
-              border: '1px solid #1A1A1A',
+              backgroundColor: '#0D1117',
+              border: '1px solid #30363D',
               maxWidth: '680px',
               width: '90vw',
               maxHeight: '85vh',
@@ -397,18 +397,18 @@ export default function Projects() {
             {/* Header */}
             <div className="flex justify-between items-start" style={{ marginBottom: '24px' }}>
               <div>
-                <p style={{ color: '#38BDF8', fontSize: '12px', marginBottom: '4px' }}>
+                <p style={{ color: '#58A6FF', fontSize: '12px', marginBottom: '4px' }}>
                   {selectedProject.number}
                 </p>
-                <p style={{ color: '#F5F5F5', fontSize: '24px', fontWeight: 700 }}>
+                <p style={{ color: '#58A6FF', fontSize: '24px', fontWeight: 700 }}>
                   {selectedProject.title}
                 </p>
               </div>
               <button
                 onClick={() => setSelectedProject(null)}
-                style={{ color: '#555555', fontSize: '20px', cursor: 'pointer', background: 'none', border: 'none', lineHeight: 1 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#F5F5F5')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#555555')}
+                style={{ color: '#8B949E', fontSize: '20px', cursor: 'pointer', background: 'none', border: 'none', lineHeight: 1 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#58A6FF')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#8B949E')}
               >
                 ✕
               </button>
@@ -427,13 +427,13 @@ export default function Projects() {
             </div>
 
             {/* Details */}
-            <p style={{ color: '#555555', fontSize: '15px', lineHeight: 1.7, marginBottom: '24px' }}>
+            <p style={{ color: '#8B949E', fontSize: '15px', lineHeight: 1.7, marginBottom: '24px' }}>
               {selectedProject.details}
             </p>
 
             {/* Technologies */}
             <div style={{ marginBottom: '24px' }}>
-              <p style={{ color: '#555555', fontSize: '12px', marginBottom: '12px' }}>{`// technologie`}</p>
+              <p style={{ color: '#8B949E', fontSize: '12px', marginBottom: '12px' }}>{`// technologie`}</p>
               <div className="flex flex-wrap gap-2">
                 {selectedProject.technologies.map((tech) => (
                   <ModalTag key={tech} label={tech} />
@@ -466,8 +466,8 @@ function ModalTag({ label }: { label: string }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        border: `1px solid ${hovered ? '#38BDF8' : '#1A1A1A'}`,
-        color: hovered ? '#38BDF8' : '#555555',
+        border: `1px solid ${hovered ? '#58A6FF' : '#161B22'}`,
+        color: hovered ? '#58A6FF' : '#8B949E',
         fontSize: '12px',
         padding: '4px 12px',
         borderRadius: '9999px',
@@ -492,8 +492,8 @@ function ModalLink({ href, label, primary }: { href: string; label: string; prim
       style={
         primary
           ? {
-              backgroundColor: hovered ? '#0EA5E9' : '#38BDF8',
-              color: '#141414',
+              backgroundColor: hovered ? '#1F6FEB' : '#58A6FF',
+              color: '#0D1117',
               fontWeight: 600,
               fontSize: '14px',
               padding: '10px 24px',
@@ -502,8 +502,8 @@ function ModalLink({ href, label, primary }: { href: string; label: string; prim
               cursor: 'pointer',
             }
           : {
-              border: `1px solid ${hovered ? '#555555' : '#1A1A1A'}`,
-              color: hovered ? '#F5F5F5' : '#555555',
+              border: `1px solid ${hovered ? '#8B949E' : '#161B22'}`,
+              color: hovered ? '#58A6FF' : '#8B949E',
               fontSize: '14px',
               padding: '10px 24px',
               borderRadius: '9999px',

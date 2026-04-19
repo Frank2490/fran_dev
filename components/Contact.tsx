@@ -5,13 +5,13 @@ import { useInView } from '@/hooks/useInView';
 
 const inputBase: React.CSSProperties = {
   backgroundColor: 'transparent',
-  borderBottom: '1px solid #1A1A1A',
+  borderBottom: '1px solid #30363D',
   borderTop: 'none',
   borderLeft: 'none',
   borderRight: 'none',
   paddingTop: '12px',
   paddingBottom: '12px',
-  color: '#F5F5F5',
+  color: '#58A6FF',
   fontSize: '15px',
   width: '100%',
   outline: 'none',
@@ -22,7 +22,7 @@ const inputBase: React.CSSProperties = {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-1" style={{ marginBottom: '24px' }}>
-      <label style={{ color: '#555555', fontSize: '13px' }}>{label}</label>
+      <label style={{ color: '#8B949E', fontSize: '13px' }}>{label}</label>
       {children}
     </div>
   );
@@ -31,7 +31,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 function ContactLink({
   href,
   label,
-  defaultColor = '#555555',
+  defaultColor = '#8B949E',
   target,
 }: {
   href: string;
@@ -48,7 +48,7 @@ function ContactLink({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        color: hovered ? (defaultColor === '#F5F5F5' ? '#38BDF8' : '#F5F5F5') : defaultColor,
+        color: hovered ? (defaultColor === '#58A6FF' ? '#58A6FF' : '#58A6FF') : defaultColor,
         fontSize: '15px',
         transition: 'color 200ms',
         cursor: 'pointer',
@@ -73,10 +73,10 @@ export default function Contact() {
   };
 
   const focusStyle = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderBottomColor = '#38BDF8';
+    e.currentTarget.style.borderBottomColor = '#58A6FF';
   };
   const blurStyle = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderBottomColor = '#1A1A1A';
+    e.currentTarget.style.borderBottomColor = '#161B22';
   };
 
   return (
@@ -84,7 +84,7 @@ export default function Contact() {
       id="kontakt"
       ref={ref as React.RefObject<HTMLElement>}
       style={{
-        backgroundColor: '#141414',
+        backgroundColor: '#0D1117',
         paddingTop: '8rem',
         paddingBottom: '8rem',
         opacity: isInView ? 1 : 0,
@@ -93,9 +93,9 @@ export default function Contact() {
       }}
     >
       <div className="max-w-5xl mx-auto px-6">
-        <div style={{ borderBottom: '1px solid #1A1A1A', paddingBottom: '16px', marginBottom: '4rem' }}>
-          <p style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#F5F5F5' }}>
-            kontakt <span style={{ color: '#38BDF8' }}>/&gt;</span>
+        <div style={{ borderBottom: '1px solid #30363D', paddingBottom: '16px', marginBottom: '4rem' }}>
+          <p style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#58A6FF' }}>
+            kontakt <span style={{ color: '#58A6FF' }}>/&gt;</span>
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function Contact() {
             <div style={{ lineHeight: 1 }}>
               <p
                 style={{
-                  color: '#F5F5F5',
+                  color: '#58A6FF',
                   fontWeight: 700,
                   fontSize: 'clamp(28px, 6vw, 64px)',
                   opacity: isInView ? 1 : 0,
@@ -115,7 +115,7 @@ export default function Contact() {
               >
                 Masz projekt?
               </p>
-              <p style={{ color: '#38BDF8', fontWeight: 700, fontSize: 'clamp(28px, 6vw, 64px)' }}>
+              <p style={{ color: '#58A6FF', fontWeight: 700, fontSize: 'clamp(28px, 6vw, 64px)' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                   Porozmawiajmy.
                   <span
@@ -123,7 +123,7 @@ export default function Contact() {
                       display: 'inline-block',
                       width: '3px',
                       height: '0.85em',
-                      backgroundColor: '#38BDF8',
+                      backgroundColor: '#58A6FF',
                       verticalAlign: 'middle',
                       animation: 'blink 800ms step-end infinite',
                     }}
@@ -132,7 +132,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <p style={{ color: '#555555', fontSize: '15px', lineHeight: 1.7, maxWidth: '400px', marginTop: '2rem' }}>
+            <p style={{ color: '#8B949E', fontSize: '15px', lineHeight: 1.7, maxWidth: '400px', marginTop: '2rem' }}>
               Jestem dostępny dla nowych projektów — landing pages,
               aplikacje webowe i automatyzacje. Napisz, chętnie
               porozmawiam o szczegółach.
@@ -142,7 +142,7 @@ export default function Contact() {
               <ContactLink
                 href="mailto:franeksolewicz228@gmail.com"
                 label="↗ franeksolewicz228@gmail.com"
-                defaultColor="#F5F5F5"
+                defaultColor="#58A6FF"
               />
               <ContactLink
                 href="https://github.com/Frank2490"
@@ -159,9 +159,9 @@ export default function Contact() {
             <div className="flex items-center" style={{ gap: '12px', marginTop: '3rem' }}>
               <span
                 className="animate-pulse rounded-full shrink-0"
-                style={{ width: '8px', height: '8px', backgroundColor: '#38BDF8' }}
+                style={{ width: '8px', height: '8px', backgroundColor: '#58A6FF' }}
               />
-              <span style={{ color: '#555555', fontSize: '13px' }}>
+              <span style={{ color: '#8B949E', fontSize: '13px' }}>
                 dostępny dla nowych projektów
               </span>
             </div>
@@ -225,8 +225,8 @@ export default function Contact() {
               onClick={handleSubmit}
               className="transition-all duration-200 hover:scale-105 w-full sm:w-auto"
               style={{
-                backgroundColor: '#38BDF8',
-                color: '#141414',
+                backgroundColor: '#58A6FF',
+                color: '#0D1117',
                 fontWeight: 600,
                 fontSize: '14px',
                 padding: '12px 32px',
@@ -236,8 +236,8 @@ export default function Contact() {
                 fontFamily: 'JetBrains Mono, monospace',
                 marginTop: '8px',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0EA5E9')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#38BDF8')}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#1F6FEB')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#58A6FF')}
             >
               wysłać wiadomość_()
             </button>

@@ -11,17 +11,17 @@ body,
 }
 
 html {
-  background-color: #141414;
-  color: #F5F5F5;
-  scrollbar-color: #1A1A1A #141414;
+  background-color: #0D1117;
+  color: #E6EDF3;
+  scrollbar-color: #30363D #0D1117;
   scrollbar-width: thin;
   scroll-behavior: smooth;
   scroll-padding-top: 64px;
 }
 
 body {
-  background-color: #141414;
-  color: #F5F5F5;
+  background-color: #0D1117;
+  color: #E6EDF3;
 }
 
 @keyframes blink {

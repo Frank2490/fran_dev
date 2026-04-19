@@ -29,8 +29,8 @@ export default function Navbar() {
       <header
         className="sticky top-0 z-50"
         style={{
-          backgroundColor: '#141414',
-          borderBottom: `1px solid ${scrolled ? '#1A1A1A' : 'transparent'}`,
+          backgroundColor: '#0D1117',
+          borderBottom: `1px solid ${scrolled ? '#161B22' : 'transparent'}`,
           transition: 'border-color 200ms',
           height: '64px',
         }}
@@ -45,7 +45,7 @@ export default function Navbar() {
               height={32}
               className="object-contain"
             />
-            <span style={{ color: '#F5F5F5', fontSize: '15px', fontWeight: 500, whiteSpace: 'nowrap' }}>
+            <span style={{ color: '#E6EDF3', fontSize: '15px', fontWeight: 500, whiteSpace: 'nowrap' }}>
             fran.dev
             </span>
           </a>
@@ -53,9 +53,9 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map(({ href, label }) => (
-              <a key={href} href={href} className="group transition-colors duration-200" style={{ fontSize: '14px', color: '#555555' }}>
+              <a key={href} href={href} className="group transition-colors duration-200" style={{ fontSize: '14px', color: '#8B949E' }}>
                 <span className="group-hover:text-white transition-colors duration-200">{label}</span>
-                <span style={{ color: '#38BDF8' }}> /&gt;</span>
+                <span style={{ color: '#58A6FF' }}> /&gt;</span>
               </a>
             ))}
           </nav>
@@ -69,9 +69,9 @@ export default function Navbar() {
             >
               <span
                 className="animate-pulse rounded-full shrink-0"
-                style={{ width: '6px', height: '6px', backgroundColor: '#38BDF8', display: 'inline-block' }}
+                style={{ width: '6px', height: '6px', backgroundColor: '#58A6FF', display: 'inline-block' }}
               />
-              <span className="group-hover:text-white transition-colors duration-200" style={{ color: '#555555' }}>
+              <span className="group-hover:text-white transition-colors duration-200" style={{ color: '#8B949E' }}>
                 dostępny
               </span>
             </a>
@@ -79,11 +79,11 @@ export default function Navbar() {
             {/* Hamburger */}
             <button
               className="md:hidden transition-colors duration-200"
-              style={{ color: '#555555', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+              style={{ color: '#8B949E', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
               aria-label="Toggle menu"
               onClick={() => setMenuOpen((o) => !o)}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#F5F5F5')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#555555')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#E6EDF3')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#8B949E')}
             >
               {menuOpen ? (
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -106,7 +106,7 @@ export default function Navbar() {
       <div
         className="fixed inset-0 z-40 md:hidden flex flex-col items-center justify-center gap-8"
         style={{
-          backgroundColor: '#141414',
+          backgroundColor: '#0D1117',
           opacity: menuOpen ? 1 : 0,
           transform: menuOpen ? 'translateY(0)' : 'translateY(-12px)',
           transition: 'opacity 250ms ease, transform 250ms ease',
@@ -118,20 +118,20 @@ export default function Navbar() {
             key={href}
             href={href}
             className="group transition-colors duration-200"
-            style={{ fontSize: '24px', color: '#555555' }}
+            style={{ fontSize: '24px', color: '#8B949E' }}
             onClick={() => setMenuOpen(false)}
           >
             <span className="group-hover:text-white transition-colors duration-200">{label}</span>
-            <span style={{ color: '#38BDF8' }}> /&gt;</span>
+            <span style={{ color: '#58A6FF' }}> /&gt;</span>
           </a>
         ))}
 
         <div className="flex items-center gap-2 mt-4" style={{ fontSize: '13px' }}>
           <span
             className="animate-pulse rounded-full shrink-0"
-            style={{ width: '6px', height: '6px', backgroundColor: '#38BDF8', display: 'inline-block' }}
+            style={{ width: '6px', height: '6px', backgroundColor: '#58A6FF', display: 'inline-block' }}
           />
-          <span style={{ color: '#555555' }}>dostępny</span>
+          <span style={{ color: '#8B949E' }}>dostępny</span>
         </div>
       </div>
     </>

@@ -18,9 +18,9 @@ function FooterNavLink({ href, label }: { href: string; label: string }) {
       href={href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ color: hovered ? '#F5F5F5' : '#555555', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
+      style={{ color: hovered ? '#58A6FF' : '#8B949E', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
     >
-      {label} <span style={{ color: '#38BDF8' }}>/&gt;</span>
+      {label} <span style={{ color: '#58A6FF' }}>/&gt;</span>
     </a>
   );
 }
@@ -28,7 +28,7 @@ function FooterNavLink({ href, label }: { href: string; label: string }) {
 function FooterLink({
   href,
   label,
-  hoverColor = '#F5F5F5',
+  hoverColor = '#58A6FF',
   target,
 }: {
   href: string;
@@ -44,7 +44,7 @@ function FooterLink({
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ color: hovered ? hoverColor : '#555555', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
+      style={{ color: hovered ? hoverColor : '#8B949E', fontSize: '13px', transition: 'color 200ms', cursor: 'pointer' }}
     >
       {label}
     </a>
@@ -58,8 +58,8 @@ export default function Footer() {
     <footer
       ref={ref as React.RefObject<HTMLElement>}
       style={{
-        backgroundColor: '#141414',
-        borderTop: '1px solid #1A1A1A',
+        backgroundColor: '#0D1117',
+        borderTop: '1px solid #30363D',
         opacity: isInView ? 1 : 0,
         transform: isInView ? 'translateY(0)' : 'translateY(24px)',
         transition: 'opacity 700ms ease, transform 700ms ease',
@@ -77,9 +77,9 @@ export default function Footer() {
                 height={28}
                 className="object-contain"
               />
-              <span style={{ color: '#F5F5F5', fontSize: '14px', fontWeight: 500 }}>fran.dev</span>
+              <span style={{ color: '#58A6FF', fontSize: '14px', fontWeight: 500 }}>fran.dev</span>
             </div>
-            <p style={{ color: '#555555', fontSize: '12px', marginTop: '12px' }}>
+            <p style={{ color: '#8B949E', fontSize: '12px', marginTop: '12px' }}>
               © 2024 Franciszek Solewicz
             </p>
           </div>
@@ -95,11 +95,11 @@ export default function Footer() {
           <div className="flex gap-6">
             <FooterLink href="https://github.com/Frank2490" label="GitHub" target="_blank" />
             <FooterLink href="https://useme.com/pl/roles/contractor/franciszek-solewicz,576196/" label="Useme" target="_blank" />
-            <FooterLink href="mailto:franeksolewicz228@gmail.com" label="Email" hoverColor="#38BDF8" />
+            <FooterLink href="mailto:franeksolewicz228@gmail.com" label="Email" hoverColor="#58A6FF" />
           </div>
         </div>
 
-        <p style={{ color: '#1A1A1A', fontSize: '12px', textAlign: 'center', marginTop: '2rem' }}>
+        <p style={{ color: '#161B22', fontSize: '12px', textAlign: 'center', marginTop: '2rem' }}>
           {'// zbudowane w Next.js i Tailwind'}
         </p>
       </div>

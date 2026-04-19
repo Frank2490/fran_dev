@@ -10,19 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#141414',
-          surface: '#1A1A1A',
+          DEFAULT: '#0D1117',
+          surface: '#161B22',
         },
+        card: '#161B22',
         border: {
-          DEFAULT: '#1A1A1A',
+          DEFAULT: '#30363D',
         },
         accent: {
-          DEFAULT: '#38BDF8',
-          dark: '#0EA5E9',
+          DEFAULT: '#58A6FF',
+          dark: '#1F6FEB',
+          light: '#7C3AED',
         },
         text: {
-          DEFAULT: '#F5F5F5',
-          muted: '#555555',
+          DEFAULT: '#E6EDF3',
+          muted: '#8B949E',
         },
       },
     },
