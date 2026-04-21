@@ -112,8 +112,23 @@ export default function Hero() {
     <section
       id="hero"
       className="relative flex items-center overflow-hidden"
-      style={{ minHeight: '100vh', backgroundColor: '#0D1117' }}
+      style={{ minHeight: '100vh', backgroundColor: '#0D1117', position: 'relative', overflow: 'hidden' }}
     >
+      <svg
+        style={{
+          position: 'absolute', top: '-40px', right: '-40px',
+          opacity: 0.0, pointerEvents: 'none', zIndex: 0
+        }}
+        width="300" height="300" viewBox="0 0 220 220"
+      >
+        <polygon points="110,10 200,57 200,163 110,210 20,163 20,57"
+          fill="none" stroke="#7C3AED" strokeWidth="1"/>
+        <polygon points="110,40 175,75 175,145 110,180 45,145 45,75"
+          fill="none" stroke="#7C3AED" strokeWidth="0.5"/>
+        <polygon points="110,70 150,92 150,138 110,160 70,138 70,92"
+          fill="none" stroke="#7C3AED" strokeWidth="0.5"/>
+      </svg>
+
       {/* Dot pattern */}
       <div
         aria-hidden

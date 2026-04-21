@@ -330,8 +330,26 @@ export default function Projects() {
           opacity: isInView ? 1 : 0,
           transform: isInView ? 'translateY(0)' : 'translateY(24px)',
           transition: 'opacity 700ms ease, transform 700ms ease',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
+        <svg
+          style={{
+            position: 'absolute', bottom: '-40px', left: '-40px',
+            opacity: 0.0, pointerEvents: 'none', zIndex: 0
+          }}
+          width="300" height="300" viewBox="0 0 220 220"
+        >
+          <polygon points="110,10 200,57 200,163 110,210 20,163 20,57"
+            fill="none" stroke="#7C3AED" strokeWidth="1"/>
+          <polygon points="110,40 175,75 175,145 110,180 45,145 45,75"
+            fill="none" stroke="#7C3AED" strokeWidth="0.5"/>
+          <polygon points="110,70 150,92 150,138 110,160 70,138 70,92"
+            fill="none" stroke="#7C3AED" strokeWidth="0.5"/>
+        </svg>
+
+        <div style={{ position: 'relative', zIndex: 1 }}>
         <div className="max-w-5xl mx-auto px-6">
           <div style={{ borderBottom: '1px solid #30363D', paddingBottom: '16px', marginBottom: '4rem' }}>
             <p
@@ -368,6 +386,7 @@ export default function Projects() {
               ))}
             </div>
           ))}
+        </div>
         </div>
       </section>
 
