@@ -68,8 +68,40 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = () => {
-    console.log(form);
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async () => {
+    setSending(true);
+    setError(false);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mgornvwv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSent(true);
+        setForm({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const focusStyle = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -241,24 +273,36 @@ export default function Contact() {
 
             <button
               onClick={handleSubmit}
+              disabled={sending || sent}
               className="transition-all duration-200 hover:scale-105 w-full sm:w-auto"
               style={{
                 backgroundColor: '#7C3AED',
-                color: '#0D1117',
+                color: sent ? '#7C3AED' : error ? 'red' : '#0D1117',
                 fontWeight: 600,
                 fontSize: '14px',
                 padding: '12px 32px',
                 borderRadius: '9999px',
                 border: 'none',
-                cursor: 'pointer',
+                cursor: sending || sent ? 'default' : 'pointer',
                 fontFamily: 'JetBrains Mono, monospace',
                 marginTop: '8px',
+                opacity: sending ? 0.7 : 1,
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#6D28D9')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#7C3AED')}
+              onMouseEnter={(e) => { if (!sending && !sent) e.currentTarget.style.backgroundColor = '#6D28D9'; }}
+              onMouseLeave={(e) => { if (!sending && !sent) e.currentTarget.style.backgroundColor = '#7C3AED'; }}
             >
-              wysłać wiadomość_()
+              {sending ? 'wysyłanie...' : sent ? 'wiadomość wysłana ✓' : error ? 'spróbuj ponownie' : 'wysłać wiadomość_()'}
             </button>
+            {sent && (
+              <p style={{
+                color: '#7C3AED',
+                fontSize: '13px',
+                marginTop: '12px',
+                fontFamily: 'JetBrains Mono',
+              }}>
+                {`// wiadomość wysłana, odezwę się wkrótce!`}
+              </p>
+            )}
           </div>
         </div>
       </div>
